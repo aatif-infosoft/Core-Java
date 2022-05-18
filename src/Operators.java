@@ -1,34 +1,59 @@
+import java.util.Scanner;
+
 public class Operators {
-    int a = 5, b= 6, c = -7;
+    Scanner scanner = new Scanner(System.in);
+    int a, b, c = 7;
     Operators (){
+        System.out.println("Test of Operator examples");
+        System.out.println("Please enter a value for a and hit enter key");
+        this.a = scanner.nextInt();
+        System.out.println("Please enter a value for b and hit enter key");
+        this.b = scanner.nextInt();
+        System.out.println("Please enter a value for c and hit enter key");
+        this.c = scanner.nextInt()*-1;
     }
     /*
     Arithmetic Operators using methods
      */
     public void arithmeticOperators(){
-        System.out.println("Arithmetic Operators");
-        System.out.println("\n\n + operator: "+ Add(a,b));
-        System.out.println("- operator: "+ Substraction(a,b));
-        System.out.println(" * operator: "+ Multiplication(a,b));
-        System.out.println(" \\ operator: "+ Division(a,b));
-        System.out.println(" % operator: "+ Modulus(a,b));
+        System.out.println("Arithmetic Operators\n\n");
+        System.out.println(" + operator --> a + b = : "+ Add(a,b));
+        System.out.println(" - operator --> a - b = : "+ Subtraction(a,b));
+        System.out.println(" * operator --> a * b = : "+ Multiplication(a,b));
+        System.out.println(" / operator --> a / b = : "+ Division(a,b));
+        System.out.println(" % operator --> a % b = : "+ Modulus(a,b));
     }
+    /*
+    Addition
+     */
     public int Add(int a, int b){
         return  a+b;
     }
 
-    public int Substraction(int a, int b){
+    /*
+    Subtraction
+     */
+    public int Subtraction(int a, int b){
         return  a - b;
     }
 
+    /*
+    Multiplication
+     */
     public int Multiplication(int a, int b){
         return  a * b;
     }
 
+    /*
+    Division
+     */
     public int Division(int a, int b){
         return  a / b;
     }
 
+    /*
+    Remainder
+     */
     public int Modulus(int a, int b){
         return  a % b;
     }
@@ -39,27 +64,29 @@ public class Operators {
     public void unaryOperators(){
         System.out.println("Unary Operators");
         //Minus is used for negating the values
-        System.out.println(-a);
+        System.out.println("Negated value of a = " + -a);
 
-        //Plus is for concatinating string, making positive and numeric promotion
+        //Plus is for concatenating string, making positive and numeric promotion
         System.out.println(+b);
-        System.out.println("Concat " +c);
+        System.out.println("Concatenating this string with value of c --> " +c);
 
         //post increment will keep a as 5 and increment for next line
-        System.out.println(a++);
+        System.out.println("Value of a right before incrementing = "+a++);
         //pre-increment will increment a to 7 as it had become 6 after previous increment
+        System.out.print("Value of after previous increment and incrementing again with pre-increment = ");
         System.out.println(++a);
 
         //post decrement will keep as 7 and decrement for next line
-        System.out.println(a--);
+        System.out.println("Value of a right before decrementing = "+a--);
 
         //pre decrement will decrease the value to 5 which had become 6 in previous statement
+        System.out.print("Value of after previous decrement and decrementing again with pre-decrement = ");
         System.out.println(--a);
 
         //Nor operator inverts the boolean values/result of an expression
-        System.out.println(!false);  // will print true
+        System.out.println("Inverting the value of false with ! operator = "+!false);  // will print true
 
-        System.out.println(!true); // will print false
+        System.out.println("Inverting the value of true with ! operator = "+!true); // will print false
     }
 
     /*
@@ -85,7 +112,7 @@ public class Operators {
      */
     public void relationalOperators(){
         System.out.println("Relational Operators");
-        //Equals operator will return fasle
+        //Equals operator will return false
         System.out.println(a==b);
         //Not equal operator will return true
         System.out.println(a!=b);
